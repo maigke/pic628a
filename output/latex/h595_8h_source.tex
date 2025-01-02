@@ -1,0 +1,42 @@
+\doxysection{h595.\+h}
+\hypertarget{h595_8h_source}{}\label{h595_8h_source}\index{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/h595.h@{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/h595.h}}
+\mbox{\hyperlink{h595_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00001}00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00002}00002\ \textcolor{comment}{\ *\ File:\ \ \ h595}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00003}00003\ \textcolor{comment}{\ *\ Author:\ Miguel\ Montiel}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00004}00004\ \textcolor{comment}{\ *\ Comments:\ Biblioteca\ para\ enviar\ datos\ a\ un\ 74595}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00005}00005\ \textcolor{comment}{\ *\ Revision\ history:\ 0.1}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00008}00008\ \textcolor{comment}{//\ This\ is\ a\ guard\ condition\ so\ that\ contents\ of\ this\ file\ are\ not\ included}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00009}00009\ \textcolor{comment}{//\ more\ than\ once.\ \ }}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00010}00010\ \textcolor{preprocessor}{\#ifndef\ H595\_H}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00011}00011\ \textcolor{preprocessor}{\#define\ H595\_H}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <xc.h>}\ \textcolor{comment}{//\ include\ processor\ files\ -\/\ each\ processor\ file\ is\ guarded.\ \ }}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00017}00017\ \textcolor{comment}{//\ TODO\ Insert\ declarations}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00019}00019\ \textcolor{comment}{//\ Comment\ a\ function\ and\ leverage\ automatic\ documentation\ with\ slash\ star\ star}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00022}\mbox{\hyperlink{h595_8h_a024148e99a7143db044a48216664d03d}{00022}}\ \textcolor{preprocessor}{\#define\ \_XTAL\_FREQ\ 4000000}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00024}\mbox{\hyperlink{h595_8h_a4b355291fe6b8ba8e167ab0faa862e45}{00024}}\ \textcolor{preprocessor}{\#define\ CLK\ PORTBbits.RB7}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00025}\mbox{\hyperlink{h595_8h_ac2059fd29cfd2e7617b2dd6a0de2e0b5}{00025}}\ \textcolor{preprocessor}{\#define\ LATCH\ PORTBbits.RB6}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00026}\mbox{\hyperlink{h595_8h_aad9ae913bdfab20dd94ad04ee2d5b045}{00026}}\ \textcolor{preprocessor}{\#define\ DATA\ PORTBbits.RB5}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00027}\mbox{\hyperlink{h595_8h_aeb7a7ba1ab7e0406f1b5ab36d579f585}{00027}}\ \textcolor{preprocessor}{\#define\ LED\ PORTBbits.RB3}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00046}00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h595_8h_acce54abb2c29fbb46d5ca8b668f6f334}{H595}}\ (\textcolor{keywordtype}{int}\ cat\ ,\ \textcolor{keywordtype}{int}\ an);}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00074}00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h595_8h_a0b74abdd6a7905e7ac7387f6896f40bb}{shift}}(\textcolor{keywordtype}{int}\ val,\textcolor{keywordtype}{int}\ dir);}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00090}00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h595_8h_adef889a45344acacff82d1edc5f16961}{clock}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00106}00106\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h595_8h_a497c310ffc8d60fe4e9ef680c0535c03}{latch}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00108}00108\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ XC\_HEADER\_TEMPLATE\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{h595_8h_source_l00109}00109\ }
+
+\end{DoxyCode}

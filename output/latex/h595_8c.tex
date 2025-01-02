@@ -1,0 +1,165 @@
+\doxysection{D\+:/\+Documentos/\+Proyectos/\+MPLABXPic/\+Matriz\+\_\+1/\+Matriz\+\_\+3a.X/h595.c File Reference}
+\hypertarget{h595_8c}{}\label{h595_8c}\index{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/h595.c@{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/h595.c}}
+{\ttfamily \#include "{}h595.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{h595_8c_acce54abb2c29fbb46d5ca8b668f6f334}{H595}} (int cat, int an)
+\begin{DoxyCompactList}\small\item\em Controla dos registros de desplazamiento 74HC595 conectados en cascada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{h595_8c_a0b74abdd6a7905e7ac7387f6896f40bb}{shift}} (int val, int dir)
+\begin{DoxyCompactList}\small\item\em Realiza el desplazamiento de un valor bit a bit a través del pin DATA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{h595_8c_adef889a45344acacff82d1edc5f16961}{clock}} (void)
+\begin{DoxyCompactList}\small\item\em Genera un pulso de reloj en el pin CLK. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{h595_8c_a497c310ffc8d60fe4e9ef680c0535c03}{latch}} (void)
+\begin{DoxyCompactList}\small\item\em Genera un pulso en el pin LATCH para transferir los datos a las salidas del registro 74HC595. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{h595_8c_adef889a45344acacff82d1edc5f16961}\index{h595.c@{h595.c}!clock@{clock}}
+\index{clock@{clock}!h595.c@{h595.c}}
+\doxysubsubsection{\texorpdfstring{clock()}{clock()}}
+{\footnotesize\ttfamily \label{h595_8c_adef889a45344acacff82d1edc5f16961} 
+void clock (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Genera un pulso de reloj en el pin CLK. 
+
+\begin{DoxyPrecond}{Precondition}
+El pin CLK debe estar configurado como salida.
+\end{DoxyPrecond}
+Esta función genera un pulso de reloj de onda cuadrada en el pin CLK. El pulso consiste en un flanco ascendente (CLK = 1) seguido de un retardo de 5 microsegundos, y luego un flanco descendente (CLK = 0) seguido de otro retardo de 5 microsegundos. Esto resulta en un ciclo completo de 10 microsegundos.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{h595_8c_adef889a45344acacff82d1edc5f16961}{clock}}();\ \textcolor{comment}{//\ Genera\ un\ pulso\ de\ reloj\ de\ 10\ microsegundos.}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+La precisión del retardo depende de la frecuencia del oscilador del microcontrolador. Asegúrate de que la macro \+\_\+\+\_\+delay\+\_\+us() esté configurada correctamente para tu configuración de hardware.
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+Es importante que la duración del pulso de reloj sea compatible con las especificaciones del dispositivo al que se está enviando la señal de reloj (por ejemplo, el 74HC595). 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{h595_8c_source_l00038}{38}} of file \mbox{\hyperlink{h595_8c_source}{h595.\+c}}.
+
+\Hypertarget{h595_8c_acce54abb2c29fbb46d5ca8b668f6f334}\index{h595.c@{h595.c}!H595@{H595}}
+\index{H595@{H595}!h595.c@{h595.c}}
+\doxysubsubsection{\texorpdfstring{H595()}{H595()}}
+{\footnotesize\ttfamily \label{h595_8c_acce54abb2c29fbb46d5ca8b668f6f334} 
+void H595 (\begin{DoxyParamCaption}\item[{int}]{cat}{, }\item[{int}]{an}{}\end{DoxyParamCaption})}
+
+
+
+Controla dos registros de desplazamiento 74HC595 conectados en cascada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cat} & Valor a enviar al primer registro 74HC595 (generalmente para los cátodos de un display). \\
+\hline
+{\em an} & Valor a enviar al segundo registro 74HC595 (generalmente para los ánodos de un display).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Los pines DATA, CLOCK y LATCH deben estar configurados como salidas. Las funciones \doxylink{h595_8h_a0b74abdd6a7905e7ac7387f6896f40bb}{shift()} y \doxylink{h595_8h_a497c310ffc8d60fe4e9ef680c0535c03}{latch()} deben estar definidas.
+\end{DoxyPrecond}
+Esta función envía dos valores a través de la función \doxylink{h595_8h_a0b74abdd6a7905e7ac7387f6896f40bb}{shift()} a dos registros 74HC595 conectados en cascada. Primero se envía el valor \textquotesingle{}an\textquotesingle{} y luego el valor \textquotesingle{}cat\textquotesingle{}. Finalmente, se llama a la función \doxylink{h595_8h_a497c310ffc8d60fe4e9ef680c0535c03}{latch()} para transferir los datos a las salidas de los registros.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Ejemplo\ de\ uso:\ enviar\ 0xFF\ al\ registro\ de\ cátodos\ y\ 0x01\ al\ registro\ de\ ánodos.}}
+\DoxyCodeLine{\mbox{\hyperlink{h595_8c_acce54abb2c29fbb46d5ca8b668f6f334}{H595}}(0xFF,\ 0x01);}
+
+\end{DoxyCode}
+
+
+\begin{DoxyRemark}{Remarks}
+El orden en que se envían los datos (primero \textquotesingle{}an\textquotesingle{} y luego \textquotesingle{}cat\textquotesingle{}) depende de la conexión física de los registros en cascada. Asegúrate de que este orden corresponda con tu hardware. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{h595_8c_source_l00012}{12}} of file \mbox{\hyperlink{h595_8c_source}{h595.\+c}}.
+
+\Hypertarget{h595_8c_a497c310ffc8d60fe4e9ef680c0535c03}\index{h595.c@{h595.c}!latch@{latch}}
+\index{latch@{latch}!h595.c@{h595.c}}
+\doxysubsubsection{\texorpdfstring{latch()}{latch()}}
+{\footnotesize\ttfamily \label{h595_8c_a497c310ffc8d60fe4e9ef680c0535c03} 
+void latch (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Genera un pulso en el pin LATCH para transferir los datos a las salidas del registro 74HC595. 
+
+\begin{DoxyPrecond}{Precondition}
+El pin LATCH debe estar configurado como salida.
+\end{DoxyPrecond}
+Esta función genera un pulso positivo (de bajo a alto y luego a bajo) en el pin LATCH. Este pulso transfiere los datos que se han desplazado previamente a través de la función {\ttfamily \doxylink{h595_8h_a0b74abdd6a7905e7ac7387f6896f40bb}{shift()}} a las salidas del registro 74HC595. El pulso en alto tiene una duración de aproximadamente 10 microsegundos.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{h595_8c_a497c310ffc8d60fe4e9ef680c0535c03}{latch}}();\ \textcolor{comment}{//\ Transfiere\ los\ datos\ a\ las\ salidas\ del\ registro\ 74HC595.}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+La precisión del retardo depende de la frecuencia del oscilador del microcontrolador. Asegúrese de que la macro {\ttfamily \+\_\+\+\_\+delay\+\_\+us()} esté configurada correctamente para su configuración de hardware.
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+La duración del pulso en LATCH debe cumplir con las especificaciones del 74HC595 para asegurar una transferencia correcta de los datos. Consultar la hoja de datos del 74HC595 para obtener información precisa sobre los tiempos de latch. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{h595_8c_source_l00045}{45}} of file \mbox{\hyperlink{h595_8c_source}{h595.\+c}}.
+
+\Hypertarget{h595_8c_a0b74abdd6a7905e7ac7387f6896f40bb}\index{h595.c@{h595.c}!shift@{shift}}
+\index{shift@{shift}!h595.c@{h595.c}}
+\doxysubsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily \label{h595_8c_a0b74abdd6a7905e7ac7387f6896f40bb} 
+void shift (\begin{DoxyParamCaption}\item[{int}]{val}{, }\item[{int}]{dir}{}\end{DoxyParamCaption})}
+
+
+
+Realiza el desplazamiento de un valor bit a bit a través del pin DATA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Valor entero de 8 bits a desplazar. \\
+\hline
+{\em dir} & Dirección del desplazamiento\+:
+\begin{DoxyItemize}
+\item 1\+: Desplazamiento a la derecha (MSB primero).
+\item 0\+: Desplazamiento a la izquierda (LSB primero).
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+El pin DATA debe estar configurado como salida. La función \doxylink{h595_8h_adef889a45344acacff82d1edc5f16961}{clock()} debe estar definida y generar un pulso de reloj.
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Ninguno.
+\end{DoxyReturn}
+Esta función implementa un desplazamiento bit a bit de un valor entero de 8 bits a través del pin DATA. Dependiendo del parámetro \textquotesingle{}dir\textquotesingle{}, el desplazamiento se realiza hacia la derecha (MSB primero) o hacia la izquierda (LSB primero). Después de cada bit enviado, se llama a la función \doxylink{h595_8h_adef889a45344acacff82d1edc5f16961}{clock()} para generar un pulso de reloj.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Ejemplo\ de\ uso:\ desplazar\ el\ valor\ 0b10101010\ hacia\ la\ derecha}}
+\DoxyCodeLine{\mbox{\hyperlink{h595_8c_a0b74abdd6a7905e7ac7387f6896f40bb}{shift}}(0b10101010,\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Ejemplo\ de\ uso:\ desplazar\ el\ valor\ 0b01010101\ hacia\ la\ izquierda}}
+\DoxyCodeLine{\mbox{\hyperlink{h595_8c_a0b74abdd6a7905e7ac7387f6896f40bb}{shift}}(0b01010101,\ 0);}
+
+\end{DoxyCode}
+
+
+\begin{DoxyRemark}{Remarks}
+Es crucial que la función \doxylink{h595_8h_adef889a45344acacff82d1edc5f16961}{clock()} genere un pulso de reloj con la duración correcta para el dispositivo receptor. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{h595_8c_source_l00021}{21}} of file \mbox{\hyperlink{h595_8c_source}{h595.\+c}}.
+

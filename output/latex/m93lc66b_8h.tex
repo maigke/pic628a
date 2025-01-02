@@ -1,0 +1,472 @@
+\doxysection{D\+:/\+Documentos/\+Proyectos/\+MPLABXPic/\+Matriz\+\_\+1/\+Matriz\+\_\+3a.X/m93lc66b.h File Reference}
+\hypertarget{m93lc66b_8h}{}\label{m93lc66b_8h}\index{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/m93lc66b.h@{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/m93lc66b.h}}
+{\ttfamily \#include $<$xc.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{m93lc66b_8h_a024148e99a7143db044a48216664d03d}{\+\_\+\+XTAL\+\_\+\+FREQ}}~4000000
+\item 
+\#define \mbox{\hyperlink{m93lc66b_8h_a3780e2fe762dc532df7d0f030b55caa0}{CS}}~PORTAbits.\+RA0
+\item 
+\#define \mbox{\hyperlink{m93lc66b_8h_ae55d82000e15df69860ea33e540f1b07}{SK}}~PORTAbits.\+RA1
+\item 
+\#define \mbox{\hyperlink{m93lc66b_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}}~PORTAbits.\+RA2
+\item 
+\#define \mbox{\hyperlink{m93lc66b_8h_a89f8701562ac09bf5c1e58516124c500}{DO}}~PORTAbits.\+RA3
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{m93lc66b_8h_acae7a1af193c5af70ced4bef543b562a}{init\+\_\+93lc66b}} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa la EEPROM 93LC66B y configura los pines del microcontrolador. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{m93lc66b_8h_a357fcffcb5e0b353f9c41a2d17a09404}{shift\+In16}} ()
+\begin{DoxyCompactList}\small\item\em Lee 16 bits de datos desde un dispositivo externo utilizando un protocolo de desplazamiento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{m93lc66b_8h_a56aed808a19595c19e58b5eecb06c226}{start\+Bit}} (void)
+\begin{DoxyCompactList}\small\item\em Genera la secuencia de bits de inicio para la comunicación con la EEPROM 93LC66B. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{m93lc66b_8h_a89cde20fab96b16e0f65e3b70c7682a3}{lee\+Memoria}} ()
+\begin{DoxyCompactList}\small\item\em Lee 16 bits de datos desde la EEPROM 93LC66B. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{m93lc66b_8h_a774b55ccddfc4a5e7ccbf9a6d7a67871}{bit\+Read}} (unsigned int data, unsigned char numero\+Bit)
+\begin{DoxyCompactList}\small\item\em Lee el valor de un bit específico dentro de un dato de 16 bits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{m93lc66b_8h_a8372911edb0b562a6839c72fdbe6c04a}{escribe}} (unsigned int dato, unsigned char contador)
+\begin{DoxyCompactList}\small\item\em Escribe una secuencia de bits en un dispositivo externo utilizando un protocolo de desplazamiento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{m93lc66b_8h_a5bf5b635188103bfa35c8d6905dd25cf}{lee\+Automatico}} (unsigned int inicio, int alcance)
+\begin{DoxyCompactList}\small\item\em Lee un rango de direcciones de la EEPROM 93LC66B de forma automática. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{m93lc66b_8h_a6a0f79bb2ebee4a3da56cd1f790f3240}{lee93\+LC66B}} (unsigned int direccion)
+\begin{DoxyCompactList}\small\item\em Lee una palabra de 16 bits desde una dirección específica de la EEPROM 93LC66B. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned char \mbox{\hyperlink{m93lc66b_8h_a8131f724a3c09a46d99b6005185a5ab1}{OPcode\+\_\+\+Lectura}} = 0b00000010
+\item 
+const unsigned char \mbox{\hyperlink{m93lc66b_8h_a12950eb31e0c5920269cc9c8a17e6094}{NUM\+\_\+\+OF\+\_\+\+CHARACTERS}} = 37
+\item 
+unsigned int \mbox{\hyperlink{m93lc66b_8h_aadf894bca9c3db53d2b4abd4010bf082}{Buf}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{m93lc66b_8h_a024148e99a7143db044a48216664d03d}\index{m93lc66b.h@{m93lc66b.h}!\_XTAL\_FREQ@{\_XTAL\_FREQ}}
+\index{\_XTAL\_FREQ@{\_XTAL\_FREQ}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{\_XTAL\_FREQ}{\_XTAL\_FREQ}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a024148e99a7143db044a48216664d03d} 
+\#define \+\_\+\+XTAL\+\_\+\+FREQ~4000000}
+
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8h_source_l00014}{14}} of file \mbox{\hyperlink{m93lc66b_8h_source}{m93lc66b.\+h}}.
+
+\Hypertarget{m93lc66b_8h_a3780e2fe762dc532df7d0f030b55caa0}\index{m93lc66b.h@{m93lc66b.h}!CS@{CS}}
+\index{CS@{CS}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{CS}{CS}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a3780e2fe762dc532df7d0f030b55caa0} 
+\#define CS~PORTAbits.\+RA0}
+
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8h_source_l00018}{18}} of file \mbox{\hyperlink{m93lc66b_8h_source}{m93lc66b.\+h}}.
+
+\Hypertarget{m93lc66b_8h_acabe1ee3d11be6214c678bf4dabda3c9}\index{m93lc66b.h@{m93lc66b.h}!DI@{DI}}
+\index{DI@{DI}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{DI}{DI}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_acabe1ee3d11be6214c678bf4dabda3c9} 
+\#define DI~PORTAbits.\+RA2}
+
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8h_source_l00020}{20}} of file \mbox{\hyperlink{m93lc66b_8h_source}{m93lc66b.\+h}}.
+
+\Hypertarget{m93lc66b_8h_a89f8701562ac09bf5c1e58516124c500}\index{m93lc66b.h@{m93lc66b.h}!DO@{DO}}
+\index{DO@{DO}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{DO}{DO}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a89f8701562ac09bf5c1e58516124c500} 
+\#define DO~PORTAbits.\+RA3}
+
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8h_source_l00021}{21}} of file \mbox{\hyperlink{m93lc66b_8h_source}{m93lc66b.\+h}}.
+
+\Hypertarget{m93lc66b_8h_ae55d82000e15df69860ea33e540f1b07}\index{m93lc66b.h@{m93lc66b.h}!SK@{SK}}
+\index{SK@{SK}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{SK}{SK}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_ae55d82000e15df69860ea33e540f1b07} 
+\#define SK~PORTAbits.\+RA1}
+
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8h_source_l00019}{19}} of file \mbox{\hyperlink{m93lc66b_8h_source}{m93lc66b.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{m93lc66b_8h_a774b55ccddfc4a5e7ccbf9a6d7a67871}\index{m93lc66b.h@{m93lc66b.h}!bitRead@{bitRead}}
+\index{bitRead@{bitRead}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{bitRead()}{bitRead()}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a774b55ccddfc4a5e7ccbf9a6d7a67871} 
+unsigned char bit\+Read (\begin{DoxyParamCaption}\item[{unsigned int}]{data}{, }\item[{unsigned char}]{numero\+Bit}{}\end{DoxyParamCaption})}
+
+
+
+Lee el valor de un bit específico dentro de un dato de 16 bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Dato de 16 bits del cual se leerá el bit. \\
+\hline
+{\em numero\+Bit} & Número del bit que se desea leer (0 para el bit menos significativo, 15 para el más significativo).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily numero\+Bit} debe estar dentro del rango válido de 0 a 15.
+\end{DoxyPrecond}
+Esta función extrae el valor de un bit específico dentro de un dato de 16 bits. Utiliza un desplazamiento a la derecha ({\ttfamily \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}}) para mover el bit deseado a la posición menos significativa y luego una máscara AND ({\ttfamily \& 0x01}) para obtener su valor (0 o 1).
+
+\begin{DoxyReturn}{Returns}
+Un valor de tipo {\ttfamily unsigned char} que representa el valor del bit leído (0 o 1).
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ myData\ =\ 0xABCD;\ \textcolor{comment}{//\ Dato\ de\ ejemplo}}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ bit5\ =\ \mbox{\hyperlink{m93lc66b_8c_a774b55ccddfc4a5e7ccbf9a6d7a67871}{bitRead}}(myData,\ 5);\ \textcolor{comment}{//\ Lee\ el\ bit\ 5\ (sexto\ bit\ desde\ la\ derecha)}}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ bit15\ =\ \mbox{\hyperlink{m93lc66b_8c_a774b55ccddfc4a5e7ccbf9a6d7a67871}{bitRead}}(myData,\ 15);\ \textcolor{comment}{//\ Lee\ el\ bit\ 15\ (bit\ más significativo)}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyRemark}{Remarks}
+Es importante asegurarse de que el valor de {\ttfamily numero\+Bit} esté dentro del rango válido (0-\/15) para evitar comportamientos indefinidos. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8c_source_l00058}{58}} of file \mbox{\hyperlink{m93lc66b_8c_source}{m93lc66b.\+c}}.
+
+\Hypertarget{m93lc66b_8h_a8372911edb0b562a6839c72fdbe6c04a}\index{m93lc66b.h@{m93lc66b.h}!escribe@{escribe}}
+\index{escribe@{escribe}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{escribe()}{escribe()}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a8372911edb0b562a6839c72fdbe6c04a} 
+void escribe (\begin{DoxyParamCaption}\item[{unsigned int}]{dato}{, }\item[{unsigned char}]{contador}{}\end{DoxyParamCaption})}
+
+
+
+Escribe una secuencia de bits en un dispositivo externo utilizando un protocolo de desplazamiento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dato} & Dato de 16 bits que se va a escribir. \\
+\hline
+{\em contador} & Número de bits que se van a escribir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Los pines SK (reloj) y DI (datos de entrada) deben estar configurados como salidas. {\ttfamily contador} debe estar dentro del rango de 1 a 16.
+\end{DoxyPrecond}
+Esta función escribe una secuencia de bits desde la variable {\ttfamily dato} al pin {\ttfamily DI}, sincronizada con la señal de reloj {\ttfamily SK}. El número de bits que se escriben está determinado por el parámetro {\ttfamily contador}. El proceso es el siguiente\+:
+\begin{DoxyEnumerate}
+\item Se itera mientras {\ttfamily contador} sea mayor que 0.
+\item En cada iteración\+: a. Se espera 1 microsegundo. b. Se lee el bit correspondiente de {\ttfamily dato} usando la función {\ttfamily \doxylink{m93lc66b_8h_a774b55ccddfc4a5e7ccbf9a6d7a67871}{bit\+Read()}} y se escribe en el pin {\ttfamily DI}. El bit que se lee está determinado por {\ttfamily (contador -\/ 1)}. c. Se espera 1 microsegundo. d. Se genera un flanco de subida en {\ttfamily SK} (SK pasa a 1). e. Se espera 1 microsegundo. f. Se genera un flanco de bajada en {\ttfamily SK} (SK pasa a 0). g. Se espera 1 microsegundo. h. Se decrementa {\ttfamily contador}.
+\item Después del bucle, se pone {\ttfamily DI} a 0.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dataToWrite\ =\ 0x1234;}
+\DoxyCodeLine{\mbox{\hyperlink{m93lc66b_8c_a8372911edb0b562a6839c72fdbe6c04a}{escribe}}(dataToWrite,\ 8);\ \textcolor{comment}{//\ Escribe\ los\ 8\ bits\ menos\ significativos\ de\ dataToWrite.}}
+\DoxyCodeLine{\mbox{\hyperlink{m93lc66b_8c_a8372911edb0b562a6839c72fdbe6c04a}{escribe}}(dataToWrite,\ 16);\ \textcolor{comment}{//\ Escribe\ los\ 16\ bits\ de\ dataToWrite.}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+La precisión de los retardos depende de la frecuencia del oscilador del microcontrolador. Asegúrese de que la macro {\ttfamily \+\_\+\+\_\+delay\+\_\+us()} esté configurada correctamente para su configuración de hardware.
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+Es fundamental que el dispositivo externo esté configurado para recibir datos con este mismo protocolo de desplazamiento. Consultar la hoja de datos del dispositivo externo para obtener información precisa sobre los tiempos y el protocolo de comunicación. El último paso de poner {\ttfamily DI} a 0 podría no ser necesario dependiendo del protocolo específico del dispositivo. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8c_source_l00066}{66}} of file \mbox{\hyperlink{m93lc66b_8c_source}{m93lc66b.\+c}}.
+
+\Hypertarget{m93lc66b_8h_acae7a1af193c5af70ced4bef543b562a}\index{m93lc66b.h@{m93lc66b.h}!init\_93lc66b@{init\_93lc66b}}
+\index{init\_93lc66b@{init\_93lc66b}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{init\_93lc66b()}{init\_93lc66b()}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_acae7a1af193c5af70ced4bef543b562a} 
+void init\+\_\+93lc66b (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa la EEPROM 93LC66B y configura los pines del microcontrolador. 
+
+\begin{DoxyPrecond}{Precondition}
+Ninguna.
+\end{DoxyPrecond}
+Esta función configura los pines del microcontrolador para la comunicación con la EEPROM 93LC66B. Configura los pines RA0 (CS), RA1 (CLK) y RA2 (DI) como salidas, y el pin RA3 (DO) como entrada. Además, deshabilita los comparadores analógicos configurando el registro CMCON.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{m93lc66b_8c_acae7a1af193c5af70ced4bef543b562a}{init\_93lc66b}}();\ \textcolor{comment}{//\ Inicializa\ la\ EEPROM\ 93LC66B}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+Es crucial que los pines del microcontrolador se configuren correctamente para evitar conflictos y asegurar una comunicación adecuada con la EEPROM.
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+La configuración {\ttfamily CMCON = 0x07} deshabilita los comparadores analógicos en el PIC. Si necesitas usar los comparadores, deberás modificar esta configuración y asegurarte de que no interfieran con la comunicación con la EEPROM. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8c_source_l00003}{3}} of file \mbox{\hyperlink{m93lc66b_8c_source}{m93lc66b.\+c}}.
+
+\Hypertarget{m93lc66b_8h_a6a0f79bb2ebee4a3da56cd1f790f3240}\index{m93lc66b.h@{m93lc66b.h}!lee93LC66B@{lee93LC66B}}
+\index{lee93LC66B@{lee93LC66B}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{lee93LC66B()}{lee93LC66B()}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a6a0f79bb2ebee4a3da56cd1f790f3240} 
+unsigned int lee93\+LC66B (\begin{DoxyParamCaption}\item[{unsigned int}]{direccion}{}\end{DoxyParamCaption})}
+
+
+
+Lee una palabra de 16 bits desde una dirección específica de la EEPROM 93LC66B. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direccion} & Dirección de memoria de la EEPROM desde la que se leerá la palabra.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Los pines CS, SK y DO deben estar configurados correctamente. La EEPROM debe haber sido inicializada correctamente con la función {\ttfamily \doxylink{m93lc66b_8h_acae7a1af193c5af70ced4bef543b562a}{init\+\_\+93lc66b()}}. {\ttfamily OPcode\+\_\+\+Lectura} debe estar definido con el código de operación correcto para la lectura. {\ttfamily direccion} debe ser una dirección válida dentro del rango de la EEPROM.
+\end{DoxyPrecond}
+Esta función realiza una lectura de una palabra de 16 bits desde una dirección específica de la EEPROM 93LC66B. El proceso es el siguiente\+:
+\begin{DoxyEnumerate}
+\item Se genera la secuencia de inicio con {\ttfamily \doxylink{m93lc66b_8h_a56aed808a19595c19e58b5eecb06c226}{start\+Bit()}}.
+\item Se escribe el código de operación de lectura ({\ttfamily OPcode\+\_\+\+Lectura}) utilizando la función {\ttfamily \doxylink{m93lc66b_8h_a8372911edb0b562a6839c72fdbe6c04a}{escribe()}}. Se escriben 2 bits para el código de operación.
+\item Se escribe la dirección de memoria ({\ttfamily direccion}) utilizando la función {\ttfamily \doxylink{m93lc66b_8h_a8372911edb0b562a6839c72fdbe6c04a}{escribe()}}. Se escriben 9 bits para la dirección.
+\item Se leen los datos de la EEPROM utilizando la función {\ttfamily \doxylink{m93lc66b_8h_a89cde20fab96b16e0f65e3b70c7682a3}{lee\+Memoria()}} y se guardan en la variable {\ttfamily data}.
+\item Se espera 10 milisegundos.
+\item Se asegura que el pin {\ttfamily SK} esté en bajo.
+\item Se espera 1 microsegundo.
+\item Se pone el pin {\ttfamily DI} a bajo.
+\item Se retorna el valor leído ({\ttfamily data}).
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Un valor entero sin signo de 16 bits ({\ttfamily unsigned int}) que contiene la palabra leída desde la EEPROM.
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ dataRead\ =\ \mbox{\hyperlink{m93lc66b_8c_a6a0f79bb2ebee4a3da56cd1f790f3240}{lee93LC66B}}(0x0A);\ \textcolor{comment}{//\ Lee\ la\ palabra\ en\ la\ dirección 0x0A.}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+La precisión de los retardos depende de la frecuencia del oscilador del microcontrolador. Asegúrese de que las macros {\ttfamily \+\_\+\+\_\+delay\+\_\+ms()} y {\ttfamily \+\_\+\+\_\+delay\+\_\+us()} estén configuradas correctamente para su configuración de hardware.
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+Consultar la hoja de datos de la 93LC66B para obtener información precisa sobre el protocolo de comunicación completo, incluyendo los tiempos de acceso y los códigos de operación. El código asume que la EEPROM está configurada para palabras de 16 bits. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8c_source_l00110}{110}} of file \mbox{\hyperlink{m93lc66b_8c_source}{m93lc66b.\+c}}.
+
+\Hypertarget{m93lc66b_8h_a5bf5b635188103bfa35c8d6905dd25cf}\index{m93lc66b.h@{m93lc66b.h}!leeAutomatico@{leeAutomatico}}
+\index{leeAutomatico@{leeAutomatico}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{leeAutomatico()}{leeAutomatico()}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a5bf5b635188103bfa35c8d6905dd25cf} 
+void lee\+Automatico (\begin{DoxyParamCaption}\item[{unsigned int}]{inicio}{, }\item[{int}]{alcance}{}\end{DoxyParamCaption})}
+
+
+
+Lee un rango de direcciones de la EEPROM 93LC66B de forma automática. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & Dirección de inicio de la lectura. \\
+\hline
+{\em alcance} & Dirección final de la lectura.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Los pines CS, SK y DO deben estar configurados correctamente. La EEPROM debe haber sido inicializada correctamente con la función {\ttfamily \doxylink{m93lc66b_8h_acae7a1af193c5af70ced4bef543b562a}{init\+\_\+93lc66b()}}. {\ttfamily OPcode\+\_\+\+Lectura} debe estar definido con el código de operación correcto para la lectura. {\ttfamily inicio} y {\ttfamily alcance} deben ser direcciones válidas dentro del rango de la EEPROM. {\ttfamily alcance} debe ser mayor o igual a {\ttfamily inicio}.
+\end{DoxyPrecond}
+Esta función lee un rango de direcciones consecutivas de la EEPROM 93LC66B. El proceso es el siguiente\+:
+\begin{DoxyEnumerate}
+\item Se inicializa la variable {\ttfamily direccion} con el valor de {\ttfamily inicio}.
+\item Se genera la secuencia de inicio con {\ttfamily \doxylink{m93lc66b_8h_a56aed808a19595c19e58b5eecb06c226}{start\+Bit()}}.
+\item Se escribe el código de operación de lectura ({\ttfamily OPcode\+\_\+\+Lectura}) con {\ttfamily \doxylink{m93lc66b_8h_a8372911edb0b562a6839c72fdbe6c04a}{escribe()}}. Se escriben 2 bits para el código de operación.
+\item Se escribe la dirección de inicio ({\ttfamily direccion}) con {\ttfamily \doxylink{m93lc66b_8h_a8372911edb0b562a6839c72fdbe6c04a}{escribe()}}. Se escriben 9 bits para la dirección.
+\item Se verifica si {\ttfamily alcance} es mayor que {\ttfamily direccion}.
+\item Si {\ttfamily alcance} es mayor que {\ttfamily direccion} (lectura de un rango)\+: a. Se entra en un bucle {\ttfamily while} que se ejecuta mientras {\ttfamily direccion} sea menor o igual a {\ttfamily alcance}. b. Dentro del bucle\+: i. Se lee el dato de la dirección actual con {\ttfamily \doxylink{m93lc66b_8h_a89cde20fab96b16e0f65e3b70c7682a3}{lee\+Memoria()}} y se guarda en {\ttfamily Buf}. ii. Se espera 10 milisegundos. iii. Se asegura que {\ttfamily SK} esté en bajo. iv. Se espera 1 microsegundo. v. Se pone {\ttfamily DI} a 0. vi. Se incrementa {\ttfamily direccion}.
+\item Si {\ttfamily alcance} no es mayor que {\ttfamily direccion} (lectura de una sola dirección, lo cual es un caso que no debería ocurrir dado que se espera que alcance sea mayor o igual a inicio)\+: a. Se lee el dato de la dirección actual con {\ttfamily \doxylink{m93lc66b_8h_a89cde20fab96b16e0f65e3b70c7682a3}{lee\+Memoria()}} y se guarda en {\ttfamily Buf}. b. Se espera 10 milisegundos. c. Se asegura que {\ttfamily SK} esté en bajo. d. Se espera 1 microsegundo. e. Se pone {\ttfamily DI} a 0.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{m93lc66b_8c_a5bf5b635188103bfa35c8d6905dd25cf}{leeAutomatico}}(0x00,\ 0x0F);\ \textcolor{comment}{//\ Lee\ desde\ la\ dirección 0x00\ hasta\ la\ 0x0F.}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+La precisión de los retardos depende de la frecuencia del oscilador del microcontrolador. Asegúrese de que las macros {\ttfamily \+\_\+\+\_\+delay\+\_\+ms()} y {\ttfamily \+\_\+\+\_\+delay\+\_\+us()} estén configuradas correctamente para su configuración de hardware. {\ttfamily Buf} debe ser una variable global o accesible dentro del ámbito de esta función.
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+Es fundamental que el valor de {\ttfamily alcance} sea mayor o igual a {\ttfamily inicio}. De lo contrario, el comportamiento no será el esperado. Consultar la hoja de datos de la 93LC66B para obtener información precisa sobre el protocolo de comunicación completo. El código asume que la EEPROM está configurada para palabras de 16 bits. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8c_source_l00083}{83}} of file \mbox{\hyperlink{m93lc66b_8c_source}{m93lc66b.\+c}}.
+
+\Hypertarget{m93lc66b_8h_a89cde20fab96b16e0f65e3b70c7682a3}\index{m93lc66b.h@{m93lc66b.h}!leeMemoria@{leeMemoria}}
+\index{leeMemoria@{leeMemoria}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{leeMemoria()}{leeMemoria()}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a89cde20fab96b16e0f65e3b70c7682a3} 
+unsigned int lee\+Memoria (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Lee 16 bits de datos desde la EEPROM 93LC66B. 
+
+\begin{DoxyPrecond}{Precondition}
+Los pines CS, SK y DO deben estar configurados correctamente. La EEPROM debe haber sido inicializada correctamente con la función {\ttfamily \doxylink{m93lc66b_8h_acae7a1af193c5af70ced4bef543b562a}{init\+\_\+93lc66b()}}. Se debe haber enviado previamente el código de operación y la dirección de lectura.
+\end{DoxyPrecond}
+Esta función lee 16 bits de datos desde la EEPROM 93LC66B utilizando la función {\ttfamily \doxylink{m93lc66b_8h_a357fcffcb5e0b353f9c41a2d17a09404}{shift\+In16()}}. El valor leído se almacena en la variable {\ttfamily Buffer} y se retorna.
+
+\begin{DoxyReturn}{Returns}
+Un valor entero sin signo de 16 bits ({\ttfamily unsigned int}) que contiene los datos leídos desde la EEPROM.
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ data\ =\ \mbox{\hyperlink{m93lc66b_8c_a89cde20fab96b16e0f65e3b70c7682a3}{leeMemoria}}();\ \textcolor{comment}{//\ Lee\ 16\ bits\ de\ datos\ desde\ la\ EEPROM.}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyRemark}{Remarks}
+Esta función asume que ya se ha enviado el código de operación de lectura y la dirección a la EEPROM. Consultar la hoja de datos de la 93LC66B para obtener información sobre el protocolo de comunicación completo. El código comentado {\ttfamily //\+Buffer = (Buffer \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 8) \texorpdfstring{$\vert$}{|} (Buffer \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 8);} se ha eliminado porque no se utiliza. Si se necesitara invertir el orden de los bytes, se debería volver a incluir y documentar adecuadamente. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8c_source_l00049}{49}} of file \mbox{\hyperlink{m93lc66b_8c_source}{m93lc66b.\+c}}.
+
+\Hypertarget{m93lc66b_8h_a357fcffcb5e0b353f9c41a2d17a09404}\index{m93lc66b.h@{m93lc66b.h}!shiftIn16@{shiftIn16}}
+\index{shiftIn16@{shiftIn16}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{shiftIn16()}{shiftIn16()}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a357fcffcb5e0b353f9c41a2d17a09404} 
+unsigned int shift\+In16 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Lee 16 bits de datos desde un dispositivo externo utilizando un protocolo de desplazamiento. 
+
+/\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} 
+
+\begin{DoxyPrecond}{Precondition}
+Los pines SK (reloj) y DO (datos de entrada) deben estar configurados correctamente. El dispositivo externo debe estar enviando los datos sincronizados con la señal de reloj.
+\end{DoxyPrecond}
+Esta función implementa un protocolo de desplazamiento para leer 16 bits de datos desde un dispositivo externo. Funciona de la siguiente manera\+:
+\begin{DoxyEnumerate}
+\item Se inicializa una variable {\ttfamily my\+Data\+In} a 0 para almacenar los datos recibidos.
+\item Se itera 16 veces (para leer 16 bits).
+\item En cada iteración\+: a. Se pone el pin SK (reloj) a bajo. b. Se espera 1 microsegundo. c. Se lee el estado del pin DO (datos de entrada) y se guarda en la variable {\ttfamily temp}. d. Si {\ttfamily temp} es 1, se establece el bit correspondiente en {\ttfamily my\+Data\+In} usando un OR bit a bit y un desplazamiento a la izquierda. e. Se pone el pin SK (reloj) a alto.
+\item Finalmente, se retorna el valor de {\ttfamily my\+Data\+In}, que contiene los 16 bits leídos.
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Un valor entero sin signo de 16 bits ({\ttfamily unsigned int}) que contiene los datos leídos.
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ receivedData\ =\ \mbox{\hyperlink{m93lc66b_8c_a357fcffcb5e0b353f9c41a2d17a09404}{shiftIn16}}();\ \textcolor{comment}{//\ Lee\ 16\ bits\ de\ datos.}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+La precisión del retardo depende de la frecuencia del oscilador del microcontrolador. Asegúrese de que la macro {\ttfamily \+\_\+\+\_\+delay\+\_\+us()} esté configurada correctamente para su configuración de hardware.
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+Es crucial que el dispositivo externo genere una señal de reloj y datos compatible con este protocolo de lectura. Consultar la hoja de datos del dispositivo externo para obtener información precisa sobre los tiempos y el protocolo de comunicación. La variable {\ttfamily pin\+State} no es necesaria y puede ser eliminada para optimizar el código. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8c_source_l00012}{12}} of file \mbox{\hyperlink{m93lc66b_8c_source}{m93lc66b.\+c}}.
+
+\Hypertarget{m93lc66b_8h_a56aed808a19595c19e58b5eecb06c226}\index{m93lc66b.h@{m93lc66b.h}!startBit@{startBit}}
+\index{startBit@{startBit}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{startBit()}{startBit()}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a56aed808a19595c19e58b5eecb06c226} 
+void start\+Bit (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Genera la secuencia de bits de inicio para la comunicación con la EEPROM 93LC66B. 
+
+\begin{DoxyPrecond}{Precondition}
+Los pines CS (Chip Select), SK (Clock) y DI (Data In) deben estar configurados como salidas.
+\end{DoxyPrecond}
+Esta función genera la secuencia de bits necesaria para iniciar una comunicación con la EEPROM 93LC66B. La secuencia consiste en los siguientes pasos\+:
+\begin{DoxyEnumerate}
+\item Se pone CS a bajo (selección del chip).
+\item Se espera 1 microsegundo.
+\item Se pone SK a bajo.
+\item Se pone DI a bajo.
+\item Se pone CS a alto.
+\item Se espera 1 microsegundo.
+\item Se pone DI a alto.
+\item Se espera 1 microsegundo.
+\item Se genera un flanco de subida en SK (SK pasa a alto).
+\item Se espera 1 microsegundo.
+\item Se pone SK a bajo.
+\item Se espera 1 microsegundo.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{m93lc66b_8c_a56aed808a19595c19e58b5eecb06c226}{startBit}}();\ \textcolor{comment}{//\ Inicia\ la\ comunicación con\ la\ EEPROM.}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+La precisión de los retardos depende de la frecuencia del oscilador del microcontrolador. Asegúrese de que la macro {\ttfamily \+\_\+\+\_\+delay\+\_\+us()} esté configurada correctamente para su configuración de hardware.
+\end{DoxyNote}
+\begin{DoxyRemark}{Remarks}
+Esta secuencia de bits es específica para la EEPROM 93LC66B y debe consultarse la hoja de datos para verificar los tiempos y la secuencia exacta. Un error en esta secuencia impedirá la correcta comunicación con la EEPROM. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8c_source_l00034}{34}} of file \mbox{\hyperlink{m93lc66b_8c_source}{m93lc66b.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{m93lc66b_8h_aadf894bca9c3db53d2b4abd4010bf082}\index{m93lc66b.h@{m93lc66b.h}!Buf@{Buf}}
+\index{Buf@{Buf}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{Buf}{Buf}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_aadf894bca9c3db53d2b4abd4010bf082} 
+unsigned int Buf}
+
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8h_source_l00028}{28}} of file \mbox{\hyperlink{m93lc66b_8h_source}{m93lc66b.\+h}}.
+
+\Hypertarget{m93lc66b_8h_a12950eb31e0c5920269cc9c8a17e6094}\index{m93lc66b.h@{m93lc66b.h}!NUM\_OF\_CHARACTERS@{NUM\_OF\_CHARACTERS}}
+\index{NUM\_OF\_CHARACTERS@{NUM\_OF\_CHARACTERS}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_OF\_CHARACTERS}{NUM\_OF\_CHARACTERS}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a12950eb31e0c5920269cc9c8a17e6094} 
+const unsigned char NUM\+\_\+\+OF\+\_\+\+CHARACTERS = 37}
+
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8h_source_l00027}{27}} of file \mbox{\hyperlink{m93lc66b_8h_source}{m93lc66b.\+h}}.
+
+\Hypertarget{m93lc66b_8h_a8131f724a3c09a46d99b6005185a5ab1}\index{m93lc66b.h@{m93lc66b.h}!OPcode\_Lectura@{OPcode\_Lectura}}
+\index{OPcode\_Lectura@{OPcode\_Lectura}!m93lc66b.h@{m93lc66b.h}}
+\doxysubsubsection{\texorpdfstring{OPcode\_Lectura}{OPcode\_Lectura}}
+{\footnotesize\ttfamily \label{m93lc66b_8h_a8131f724a3c09a46d99b6005185a5ab1} 
+const unsigned char OPcode\+\_\+\+Lectura = 0b00000010}
+
+
+
+Definition at line \mbox{\hyperlink{m93lc66b_8h_source_l00023}{23}} of file \mbox{\hyperlink{m93lc66b_8h_source}{m93lc66b.\+h}}.
+

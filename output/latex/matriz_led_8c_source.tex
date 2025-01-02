@@ -1,0 +1,94 @@
+\doxysection{matriz\+Led.\+c}
+\hypertarget{matriz_led_8c_source}{}\label{matriz_led_8c_source}\index{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/matrizLed.c@{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/matrizLed.c}}
+\mbox{\hyperlink{matriz_led_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{matriz_led_8h}{matrizLed.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00003}\mbox{\hyperlink{matriz_led_8c_a68c65d618634dad41056b3c71d2d671a}{00003}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{matriz_led_8c_a68c65d618634dad41056b3c71d2d671a}{buscaDirEEPROM}}(\textcolor{keywordtype}{char}\ dat)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00005}00005\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ memoria;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ caracter;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00007}00007\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ DatosAlmacenados\ =\ \mbox{\hyperlink{m93lc66b_8h_a12950eb31e0c5920269cc9c8a17e6094}{NUM\_OF\_CHARACTERS}};}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ i\ =\ 0;\ i\ <\ DatosAlmacenados;i++)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}\(\backslash\)nDirBuscada:\ "{});\ enviaHexByte(10*i);\ }}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00012}00012\ \ \ \ \ \ \ \ \ \ memoria\ =\ \mbox{\hyperlink{m93lc66b_8c_a6a0f79bb2ebee4a3da56cd1f790f3240}{lee93LC66B}}(10*i);}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ \ caracter\ =\ memoria\ \&\ 0x00FF;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}-\/-\/-\/\ mem:"{});enviaHexByte(caracter);\ printCad("{}\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((dat\ -\/\ caracter)\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (10*i);}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ 5;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00021}\mbox{\hyperlink{matriz_led_8c_a09a6494fbd8de7d63c29f920bb500965}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{matriz_led_8c_a09a6494fbd8de7d63c29f920bb500965}{printCad93LC66B}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *cad)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ memoria=0,\ dir;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ numPatrones;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00026}00026\ \ \ \ \ uint8\_t\ \textcolor{keyword}{const}\ S[8]\ =\ \{1,\ 2,\ 4,\ 8,\ 16,\ 32,\ 64,\ 128\};}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00027}00027\ \ \ \ \ uint8\_t\ message[10]=\{0\};}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{int}\ y,n,p;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00029}00029\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{while}(cad[i]!=\ 0)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//enviaRS232(cad[i]);}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}-\/\ char-\/:\ "{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//enviaHexByte(cad[i]);}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ dir\ =\ \mbox{\hyperlink{matriz_led_8c_a68c65d618634dad41056b3c71d2d671a}{buscaDirEEPROM}}(cad[i]);}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}\ \ -\/dir-\/:"{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//enviaHexByte(dir);}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dir\ !=\ 5)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ memoria\ =\ \mbox{\hyperlink{m93lc66b_8c_a6a0f79bb2ebee4a3da56cd1f790f3240}{lee93LC66B}}(dir);}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ numPatrones\ =\ (memoria\ >>\ 8)\ \&\ (0x00FF);}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}NumPat:\ "{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//enviaHexByte(numPatrones);}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <=\ numPatrones;\ j++)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((j+2)\%2\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memoria\ =\ \mbox{\hyperlink{m93lc66b_8c_a6a0f79bb2ebee4a3da56cd1f790f3240}{lee93LC66B}}(dir+j+2);}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ message[j+1]\ =\ (memoria\ >>\ 8)\ \&\ 0x00FF;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ message[j]\ =\ memoria\ \&\ 0x00FF;}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}Direccion\ ["{});enviaHexByte(j);}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}]:\ "{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//enviaHexByte((memoria\ >>\ 8)\ \&\ 0x00FF);}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//enviaHexByte(memoria\ \&\ 0x00FF);}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}\(\backslash\)r\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//for(\ y\ =\ 0;\ y\ <\ numPatrones+8;\ y++)}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\ p\ =\ 0;\ p\ <\ 32;\ p++)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(n=0;n<8;n++)}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{h595_8c_acce54abb2c29fbb46d5ca8b668f6f334}{H595}}(\string~message[n],S[n]);}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_delay\_us(5);}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{h595_8c_acce54abb2c29fbb46d5ca8b668f6f334}{H595}}(0,0);}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Debug\ de\ contenido\ de\ mensaje}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printCad("{}Msg::-\/-\/-\/\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//for(int\ i\ =\ 0;\ i\ <\ numPatrones+1;\ i++)}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ enviaHexByte(i);}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ printCad("{}:-\/"{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ enviaHexByte(message[i]);}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ printCad("{}-\/-\/"{});}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00086}00086\ \ \ \ \ i++;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matriz_led_8c_source_l00088}00088\ \}}
+
+\end{DoxyCode}

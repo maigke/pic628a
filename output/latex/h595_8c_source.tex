@@ -1,0 +1,55 @@
+\doxysection{h595.\+c}
+\hypertarget{h595_8c_source}{}\label{h595_8c_source}\index{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/h595.c@{D:/Documentos/Proyectos/MPLABXPic/Matriz\_1/Matriz\_3a.X/h595.c}}
+\mbox{\hyperlink{h595_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00002}00002\ \textcolor{comment}{\ *\ File:\ \ \ h595.c}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00003}00003\ \textcolor{comment}{\ *\ Author:\ mmont}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00004}00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00005}00005\ \textcolor{comment}{\ *\ Created\ on\ 31\ de\ diciembre\ de\ 2024,\ 01:18\ PM}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{h595_8h}{h595.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00012}\mbox{\hyperlink{h595_8c_acce54abb2c29fbb46d5ca8b668f6f334}{00012}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h595_8c_acce54abb2c29fbb46d5ca8b668f6f334}{H595}}\ (\textcolor{keywordtype}{int}\ cat\ ,\ \textcolor{keywordtype}{int}\ an)}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{h595_8c_a0b74abdd6a7905e7ac7387f6896f40bb}{shift}}(an,0);}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{h595_8c_a0b74abdd6a7905e7ac7387f6896f40bb}{shift}}(cat,0);}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{h595_8c_a497c310ffc8d60fe4e9ef680c0535c03}{latch}}();}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00021}\mbox{\hyperlink{h595_8c_a0b74abdd6a7905e7ac7387f6896f40bb}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h595_8c_a0b74abdd6a7905e7ac7387f6896f40bb}{shift}}(\textcolor{keywordtype}{int}\ val,\ \textcolor{keywordtype}{int}\ dir)\{}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (dir\ ==\ 1)\{\ \ \textcolor{comment}{//\ Desplazamiento\ hacia\ la\ derecha\ (MSB\ primero)}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (y\ =\ 7;\ y\ >=\ 0;\ y-\/-\/)\{}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{h595_8h_aad9ae913bdfab20dd94ad04ee2d5b045}{DATA}}\ =\ (val\ >>\ y)\ \&\ 0x01;\ \ \textcolor{comment}{//\ Extrae\ el\ bit\ correspondiente\ desde\ el\ MSB}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{h595_8c_adef889a45344acacff82d1edc5f16961}{clock}}();}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \ \textcolor{comment}{//\ Desplazamiento\ hacia\ la\ izquierda\ (LSB\ primero)}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (y\ =\ 0;\ y\ <\ 8;\ y++)\{}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{h595_8h_aad9ae913bdfab20dd94ad04ee2d5b045}{DATA}}\ =\ (val\ >>\ (7\ -\/\ y))\ \&\ 0x01;\ \ \textcolor{comment}{//\ Extrae\ el\ bit\ correspondiente\ desde\ el\ LSB}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{h595_8c_adef889a45344acacff82d1edc5f16961}{clock}}();}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00038}\mbox{\hyperlink{h595_8c_adef889a45344acacff82d1edc5f16961}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h595_8c_adef889a45344acacff82d1edc5f16961}{clock}}(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{h595_8h_a4b355291fe6b8ba8e167ab0faa862e45}{CLK}}\ \ =\ 1;}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00040}00040\ \ \ \ \ \_\_delay\_us(5);}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{h595_8h_a4b355291fe6b8ba8e167ab0faa862e45}{CLK}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00042}00042\ \ \ \ \ \_\_delay\_us(5);}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00045}\mbox{\hyperlink{h595_8c_a497c310ffc8d60fe4e9ef680c0535c03}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{h595_8c_a497c310ffc8d60fe4e9ef680c0535c03}{latch}}(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{h595_8h_ac2059fd29cfd2e7617b2dd6a0de2e0b5}{LATCH}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00047}00047\ \ \ \ \ \_\_delay\_us(10);}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{h595_8h_ac2059fd29cfd2e7617b2dd6a0de2e0b5}{LATCH}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{h595_8c_source_l00049}00049\ \}}
+
+\end{DoxyCode}
